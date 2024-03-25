@@ -1,0 +1,7 @@
+out/
+node_modules/
+.git/
+db.json
+README.md
+.gitignore
+.env.example
