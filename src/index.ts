@@ -52,3 +52,4 @@ async function schedule_function() {
 const schedule_job = new CronJob("* 0-23/2 * * *", schedule_function, null, true, "Asia/Ho_Chi_Minh");
 
 schedule_job.start();
+console.log("Cron job started.");
