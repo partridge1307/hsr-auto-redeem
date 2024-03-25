@@ -44,7 +44,7 @@ async function start_redeem(has_discord_wh: boolean, callback: (content: string)
 }
 
 async function schedule_function() {
-  process.env.SCRIPT_DISCORD_WEBHOOK && notify_via_discord("Start processing...");
+  console.log("Start processing...");
   await start_redeem(!!process.env.SCRIPT_DISCORD_WEBHOOK, notify_via_discord);
 }
 
