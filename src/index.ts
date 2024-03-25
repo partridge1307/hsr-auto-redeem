@@ -48,11 +48,11 @@ async function schedule_function() {
   console.log("Start redeem...");
   !!process.env.SCRIPT_DISCORD_WEBHOOK && notify_via_discord("Start redeem...");
   await start_redeem(!!process.env.SCRIPT_DISCORD_WEBHOOK, notify_via_discord);
+  console.log("Redeem finished.");
 }
 
 
-// I dont know why but the cron job always run process evert 1 minute if I use step value
-schedule("* 0,2,4,6,8,10,12,14,16,18,20,22 * * *", schedule_function, {
+schedule("0 */2 * * *", schedule_function, {
   scheduled: true,
   timezone: "Asia/Ho_Chi_Minh"
 }); // Run every 2 hours

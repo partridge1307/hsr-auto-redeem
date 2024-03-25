@@ -28,12 +28,13 @@ export async function retryFetch<T>(params: T[], fn: (...args: T[]) => Promise<R
       throw new Error(`Failed to fetch data after ${retries} retries`);
     }
 
+    await sleep(5000);
+
     if (err.message === "Code already redeemed") {
       throw new Error(err.message);
     }
 
     console.error(`Failed to fetch data: ${err.message}. Retrying in 5 seconds...`);
-    await sleep(5000);
     return retryFetch(params, fn, retries - 1);
   }
 }
