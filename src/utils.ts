@@ -45,7 +45,7 @@ export async function notify_via_discord(content: string) {
     content
   });
 
-  await fetch(process.env.DISCORD_WEBHOOK_URL!, {
+  await fetch(process.env.SCRIPT_DISCORD_WEBHOOK!, {
     method: "POST",
     body: payload,
     headers: {
