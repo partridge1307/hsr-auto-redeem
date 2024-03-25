@@ -1,0 +1,22 @@
+{
+  "name": "crawl",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun out/index.js",
+    "dev": "bun run ./src/index.ts",
+    "compile": "bun run ./build.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cheerio": "latest",
+    "cron": "^3.1.6",
+    "dotenv": "^16.4.5",
+    "lowdb": "^7.0.1"
+  }
+}
