@@ -13,8 +13,6 @@ export async function retryFetch<T>(params: T[], fn: (...args: T[]) => Promise<R
     const response = await fn(...params) as Response;
     const serialized = await response.json() as ResponseType
 
-    console.log(serialized);
-
     if (serialized.message !== "OK") {
       if (serialized.retcode === -2017) {
         throw new Error("Code already redeemed");

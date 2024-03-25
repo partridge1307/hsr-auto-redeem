@@ -45,9 +45,10 @@ async function start_redeem(has_discord_wh: boolean, callback: (content: string)
 
 async function schedule_function() {
   console.log("Start processing...");
+  !!process.env.SCRIPT_DISCORD_WEBHOOK && notify_via_discord("Start processing...");
   await start_redeem(!!process.env.SCRIPT_DISCORD_WEBHOOK, notify_via_discord);
 }
 
-const schedule_job = new CronJob("* */2 * * *", schedule_function, null, true, "Asia/Ho_Chi_Minh");
+const schedule_job = new CronJob("* 0-23/2 * * *", schedule_function, null, true, "Asia/Ho_Chi_Minh");
 
 schedule_job.start();
