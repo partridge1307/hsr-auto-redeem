@@ -10,7 +10,7 @@ This script will running on [Render](https://render.com). It will automatically 
 2. Select deployment method as **Docker**.
 3. Paste the following URL in the **Docker Image** field. [Docker Image](https://hub.docker.com/r/partridge1307/hsr-auto-redeem).
 ```
-partridge1307/hsr-auto-redeem:1.2
+partridge1307/hsr-auto-redeem:tag
 ```
 4. Set the **Environment Variables** as follows:
 ``` bash
