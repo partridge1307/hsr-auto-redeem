@@ -1,7 +1,9 @@
-# crawl
+# Honkai Star Rail Auto Redeem Script
 
-To install dependencies:
+Please follow the instructions below to run the script.
 
+1. use `bun` to run the script
+2. Config environment variables in `.env` file
 ```bash
 bun install
 ```
