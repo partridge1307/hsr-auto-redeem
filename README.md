@@ -19,6 +19,7 @@ SCRIPT_USER_COOKIE_TOKEN_V2=<Your cookie_token_v2>
 SCRIPT_USER_UID=<Your in-game uid>
 SCIPT_USER_ACCOUNT_ID=<Your account_id>
 ```
+5. You can use [Uptime](https://uptime.com/) to keep the service alive.
 
 ## Build from source
 1. Clone this repository.

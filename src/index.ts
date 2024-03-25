@@ -2,7 +2,8 @@ import "dotenv/config";
 import { JSONFilePreset } from "lowdb/node";
 import { getCodes, redeem } from "./redeem";
 import { notify_via_discord, retryFetch } from "./utils";
-import { CronJob } from "cron";
+import http from "http";
+import { schedule } from "node-cron";
 
 const COOKIE = `cookie_token_v2=${process.env.SCRIPT_USER_COOKIE_TOKEN_V2}; account_id_v2=${process.env.SCRPT_USER_ACCOUNT_ID_V2}`;
 
@@ -44,12 +45,18 @@ async function start_redeem(has_discord_wh: boolean, callback: (content: string)
 }
 
 async function schedule_function() {
-  console.log("Start processing...");
-  !!process.env.SCRIPT_DISCORD_WEBHOOK && notify_via_discord("Start processing...");
+  console.log("Start redeem...");
+  !!process.env.SCRIPT_DISCORD_WEBHOOK && notify_via_discord("Start redeem...");
   await start_redeem(!!process.env.SCRIPT_DISCORD_WEBHOOK, notify_via_discord);
 }
 
-const schedule_job = new CronJob("* 0-23/2 * * *", schedule_function, null, true, "Asia/Ho_Chi_Minh");
 
-schedule_job.start();
+schedule("* */2 * * *", schedule_function, {
+  scheduled: true,
+  timezone: "Asia/Ho_Chi_Minh"
+}); // Run every 2 hours
 console.log("Cron job started.");
+
+http.createServer((_, res) => {
+  res.end("Pong");
+}).listen(8080);
