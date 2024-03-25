@@ -10,6 +10,4 @@ RUN bun install
 
 COPY . .
 
-RUN bun compile
-
 CMD [ "bun", "start" ]

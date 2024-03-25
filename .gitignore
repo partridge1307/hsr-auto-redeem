@@ -3,6 +3,8 @@
 # build output
 out/
 
+db.json
+
 # Logs
 
 logs

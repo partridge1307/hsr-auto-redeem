@@ -26,7 +26,6 @@ SCIPT_USER_ACCOUNT_ID=<Your account_id>
 2. Install [Bun](https://bun.sh/).
 3. Run the following command to build the project.
 ``` bash
-bun compile # Compile to js
 bun start # Run the script
 ```
 4. Deploy to your server and set the environment variables as mentioned above.

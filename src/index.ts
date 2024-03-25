@@ -51,7 +51,8 @@ async function schedule_function() {
 }
 
 
-schedule("* */2 * * *", schedule_function, {
+// I dont know why but the cron job always run process evert 1 minute if I use step value
+schedule("* 0,2,4,6,8,10,12,14,16,18,20,22 * * *", schedule_function, {
   scheduled: true,
   timezone: "Asia/Ho_Chi_Minh"
 }); // Run every 2 hours
