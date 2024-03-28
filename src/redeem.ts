@@ -20,9 +20,9 @@ export async function getCodes(): Promise<string[]> {
   const codes_section = $("div.content.hsr > div.codes > div.box.centered");
 
   return codes_section.map((_, el) => {
-    const code = $(el).find(".code").text();
+    const code = $(el).find(".code").text().split(" ")[0]
     return code;
-  }).get()
+  }).get().filter(Boolean);
 };
 
 export async function redeem(code: string, cookie: string, user_uid: string): Promise<Response> {

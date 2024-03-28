@@ -10,6 +10,7 @@ srcDir.filter((dir) => dir.endsWith(".ts")).forEach((dir) =>
 await Bun.build({
   entrypoints: target,
   outdir: './out',
-  target: 'node',
+  target: 'bun',
+  minify: true,
 });
 

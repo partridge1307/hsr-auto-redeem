@@ -37,7 +37,7 @@ async function start_redeem(has_discord_wh: boolean, callback: (content: string)
         has_discord_wh && await callback(`Code already redeemed: ${code}`);
         console.error(err.message);
       } else {
-        has_discord_wh && await callback(`Failed to redeem code: ${code}`);
+        has_discord_wh && await callback(`Failed to redeem code: ${code}. Error: ${err.message}`)
         console.error(err.message);
       }
     }
